@@ -27,8 +27,8 @@ class MainActivity : AppCompatActivity() {
             nome=true
         }
 
-        val n1 = et_n1.text.toString().toInt()
-        val n2 = et_n2.text.toString().toInt()
+        val n1 = et_n1.text.toString().toDouble()
+        val n2 = et_n2.text.toString().toDouble()
 
         var nota1 = false
         var nota2 = false
@@ -55,13 +55,16 @@ class MainActivity : AppCompatActivity() {
         val media = (n1+n2)/2
 
         if (media < 5){
-            tv_resultado.text = et_nome.text.toString() + ", sua média foi de " + media + "(arredondado)."
+            tv_resultado.text = et_nome.text.toString() + ", sua média foi de " + media.toDouble() + "."
             tv_resultado.setTextColor(Color.RED)
         }
         else{
-            tv_resultado.text = et_nome.text.toString() + ", sua média foi de " + media + "(arredondado)."
+            tv_resultado.text = et_nome.text.toString() + ", sua média foi de " + media.toDouble() + "."
             tv_resultado.setTextColor(Color.BLUE)
         }
     }
+        else{
+            tv_resultado.text = ""
+        }
     }
 }
